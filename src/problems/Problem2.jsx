@@ -10,6 +10,13 @@ export default function Problem2() {
     // 2. Trim text — skip (return early) if it's empty
     // 3. Add a new object to items: { id: crypto.randomUUID(), text: trimmed }
     // 4. Clear the input back to ''
+    e.preventDefault();
+    const trimmed = text.trim();
+    if(!trimmed){
+      return;
+    }
+    setItems([...items, {id: crypto.randomUUID(), text:trimmed}])
+    setText('');
   }
 
   return (
